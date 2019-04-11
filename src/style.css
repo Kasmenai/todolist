@@ -1,3 +1,28 @@
 .paper {
   margin-top: 35px;
 }
+
+.sidebar {
+  padding: 10px 20px;
+}
+
+.form-control {
+  display: block;
+}
+
+.form__fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar__form {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.form__footer {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: auto;
+  }
