@@ -15,7 +15,11 @@ function App() {
   return (
     <Store.Provider value={{ state, dispatch }}>
       <TodoHeader />
-      <Drawer anchor="right" open={state.isOpen}>
+      <Drawer
+        anchor="right"
+        open={state.isOpen}
+        onClose={() => dispatch({ type: 'TOGGLE_DRAWER' })}
+      >
         <TodoForm />
       </Drawer>
       <TodoList />
