@@ -1,7 +1,11 @@
 const updateTodos = (todos, newTodo) => {
   const index = todos.findIndex(item => item.id === newTodo.id)
-  return todos.map((item, i) => (i === index ? newTodo : item))
+  return todos.map((item, i) => (i === index ? { ...item, ...newTodo } : item))
 }
+// const updateTodos = (todos, newTodo) => {
+//   const index = todos.findIndex(item => item.id === newTodo.id)
+//   return todos.map((item, i) => (i === index ? newTodo : item))
+// }
 
 const emptyTodo = {
   id: '',
