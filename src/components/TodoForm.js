@@ -39,7 +39,7 @@ export default function TodoForm() {
     <div className="sidebar">
       <form onSubmit={handleTodoAdd} className="sidebar__form form">
         <div className="form__header">
-          <Typography component="h1" variant="h2" gutterBottom>
+          <Typography component="h2" variant="h3" gutterBottom>
             Новая задача
           </Typography>
         </div>
