@@ -74,6 +74,7 @@ export default function TodoForm() {
             name="description"
             margin="normal"
             variant="outlined"
+            multiline
           />
           <FormControl classes={{ root: 'form-control' }}>
             <InputLabel htmlFor="status">Статус</InputLabel>
