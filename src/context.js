@@ -7,12 +7,14 @@ const Store = React.createContext({
       name: 'Проверка диска',
       description: 'Проверить свободное место в /var/log',
       status: 'Выполняется',
+      tag: 'тег0',
     },
     {
       id: 2,
       name: 'Список замечаний',
       description: 'Составить список замечаний',
       status: 'На потом',
+      tag: 'тег2',
     },
   ],
   currentTodo: {
@@ -21,6 +23,7 @@ const Store = React.createContext({
     description: '',
     status: '',
     isEditing: false,
+    tag: '',
   },
   isOpen: false,
 })

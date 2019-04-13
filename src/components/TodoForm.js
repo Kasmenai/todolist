@@ -9,18 +9,30 @@ import FormControl from '@material-ui/core/FormControl'
 import Select from '@material-ui/core/Select'
 import InputLabel from '@material-ui/core/InputLabel'
 
+import Autocomplete from './Autocomplete'
+
+import { createMuiTheme } from '@material-ui/core/styles'
+import { ThemeProvider } from '@material-ui/styles'
+
 export default function TodoForm() {
   const {
     state: { currentTodo },
     dispatch,
   } = useContext(Store)
-  const { name, description, status, isEditing } = currentTodo
+  const { name, description, status, isEditing, tag } = currentTodo
 
   const handleInputChange = e => {
     const target = e.target
     const value = target.type === 'checkbox' ? target.checked : target.value
     const name = target.name
     dispatch({ type: 'EDIT_FIELD', payload: { [name]: value } })
+  }
+
+  function handleTagChange(value) {
+    dispatch({
+      type: 'EDIT_FIELD',
+      payload: { id: currentTodo.id, tag: value },
+    })
   }
 
   const handleTodoAdd = e => {
@@ -31,9 +43,11 @@ export default function TodoForm() {
       dispatch({ type: 'ADD_TODO', payload: { ...currentTodo, id: uniqid() } })
     }
   }
+
   const handleCancel = () => {
     dispatch({ type: 'TOGGLE_DRAWER' })
   }
+  const theme = createMuiTheme({ typography: { useNextVariants: true } })
 
   return (
     <div className="sidebar">
@@ -76,6 +90,10 @@ export default function TodoForm() {
               <MenuItem value="Выполнена">Выполнена</MenuItem>
             </Select>
           </FormControl>
+
+          <ThemeProvider theme={theme}>
+            <Autocomplete onTagChange={handleTagChange} tagValue={tag} />
+          </ThemeProvider>
         </div>
         <div className="form__footer">
           <Button type="submit" color="primary" variant="contained">
