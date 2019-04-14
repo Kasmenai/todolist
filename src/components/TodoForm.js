@@ -15,9 +15,6 @@ import FormControlLabel from '@material-ui/core/FormControlLabel'
 
 import Autocomplete from './Autocomplete'
 
-import { createMuiTheme } from '@material-ui/core/styles'
-import { ThemeProvider } from '@material-ui/styles'
-
 export default function TodoForm() {
   const {
     state: { currentTodo },
@@ -60,7 +57,6 @@ export default function TodoForm() {
   const handleCancel = () => {
     dispatch({ type: 'TOGGLE_DRAWER' })
   }
-  const theme = createMuiTheme({ typography: { useNextVariants: true } })
 
   return (
     <div className="sidebar">
@@ -144,10 +140,7 @@ export default function TodoForm() {
               <MenuItem value="Выполнена">Выполнена</MenuItem>
             </Select>
           </FormControl>
-
-          <ThemeProvider theme={theme}>
-            <Autocomplete onTagChange={handleTagChange} tagValue={tag} />
-          </ThemeProvider>
+          <Autocomplete onTagChange={handleTagChange} tagValue={tag} />
         </div>
         <div className="form__footer">
           <Button type="submit" color="primary" variant="contained">
