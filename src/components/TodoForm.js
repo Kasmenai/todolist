@@ -136,7 +136,10 @@ export default function TodoForm() {
               />
             </RadioGroup>
           )}
-          <FormControl classes={{ root: 'form-control' }}>
+          <FormControl
+            classes={{ root: 'form-control' }}
+            style={{ marginBottom: 20, marginTop: 20 }}
+          >
             <InputLabel htmlFor="status">Статус</InputLabel>
             <Select
               value={status}

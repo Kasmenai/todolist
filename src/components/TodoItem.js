@@ -11,8 +11,10 @@ const TodoItem = ({ todo, editTodo, deleteTodo, id }) => {
     <TableRow key={todo.id}>
       <TableCell>{id}</TableCell>
       <TableCell>
-        {todo.status}
-        <LongMenu id={todo.id} currentStatus={todo.status} />
+        <span className="status">
+          {todo.status}
+          <LongMenu id={todo.id} currentStatus={todo.status} />
+        </span>
       </TableCell>
       <TableCell>{todo.name}</TableCell>
       <TableCell>{todo.description}</TableCell>

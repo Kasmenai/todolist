@@ -15,6 +15,7 @@
 .form__fields {
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 
 .sidebar__form {
@@ -37,4 +38,8 @@
 
 .controls:hover{
   opacity: 1;
+}
+.status {
+  display: flex;
+  align-items: center;
 }
