@@ -100,33 +100,35 @@ export default function TodoForm() {
               shrink: true,
             }}
           />
-          <RadioGroup
-            aria-label="importance"
-            name="importance"
-            value={importance}
-            onChange={handleInputChange}
-          >
-            <FormControlLabel
-              value="Срочная важная задача"
-              control={<Radio />}
-              label="Срочная важная задача"
-            />
-            <FormControlLabel
-              value="Срочная неважная задача"
-              control={<Radio />}
-              label="Срочная неважная задача"
-            />
-            <FormControlLabel
-              value="Не срочная важная задача"
-              control={<Radio />}
-              label="Не срочная важная задача"
-            />
-            <FormControlLabel
-              value="Не срочная неважная задача"
-              control={<Radio />}
-              label="Не срочная неважная задача"
-            />
-          </RadioGroup>
+          {date && (
+            <RadioGroup
+              aria-label="importance"
+              name="importance"
+              value={importance}
+              onChange={handleInputChange}
+            >
+              <FormControlLabel
+                value="Срочная важная задача"
+                control={<Radio />}
+                label="Срочная важная задача"
+              />
+              <FormControlLabel
+                value="Срочная неважная задача"
+                control={<Radio />}
+                label="Срочная неважная задача"
+              />
+              <FormControlLabel
+                value="Не срочная важная задача"
+                control={<Radio />}
+                label="Не срочная важная задача"
+              />
+              <FormControlLabel
+                value="Не срочная неважная задача"
+                control={<Radio />}
+                label="Не срочная неважная задача"
+              />
+            </RadioGroup>
+          )}
           <FormControl classes={{ root: 'form-control' }}>
             <InputLabel htmlFor="status">Статус</InputLabel>
             <Select
