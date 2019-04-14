@@ -8,6 +8,10 @@ import MenuItem from '@material-ui/core/MenuItem'
 import FormControl from '@material-ui/core/FormControl'
 import Select from '@material-ui/core/Select'
 import InputLabel from '@material-ui/core/InputLabel'
+import Radio from '@material-ui/core/Radio'
+
+import RadioGroup from '@material-ui/core/RadioGroup'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
 
 import Autocomplete from './Autocomplete'
 
@@ -19,7 +23,16 @@ export default function TodoForm() {
     state: { currentTodo },
     dispatch,
   } = useContext(Store)
-  const { name, description, status, isEditing, tag, date } = currentTodo
+
+  const {
+    name,
+    description,
+    status,
+    isEditing,
+    tag,
+    date,
+    importance,
+  } = currentTodo
 
   const handleInputChange = e => {
     const target = e.target
@@ -87,6 +100,33 @@ export default function TodoForm() {
               shrink: true,
             }}
           />
+          <RadioGroup
+            aria-label="importance"
+            name="importance"
+            value={importance}
+            onChange={handleInputChange}
+          >
+            <FormControlLabel
+              value="Срочная важная задача"
+              control={<Radio />}
+              label="Срочная важная задача"
+            />
+            <FormControlLabel
+              value="Срочная неважная задача"
+              control={<Radio />}
+              label="Срочная неважная задача"
+            />
+            <FormControlLabel
+              value="Не срочная важная задача"
+              control={<Radio />}
+              label="Не срочная важная задача"
+            />
+            <FormControlLabel
+              value="Не срочная неважная задача"
+              control={<Radio />}
+              label="Не срочная неважная задача"
+            />
+          </RadioGroup>
           <FormControl classes={{ root: 'form-control' }}>
             <InputLabel htmlFor="status">Статус</InputLabel>
             <Select

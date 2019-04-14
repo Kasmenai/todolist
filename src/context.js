@@ -9,6 +9,7 @@ const Store = React.createContext({
       status: 'Выполняется',
       tag: 'тег0',
       date: '2019-07-22',
+      importance: 'Срочная важная задача',
     },
     {
       id: 2,
@@ -17,6 +18,7 @@ const Store = React.createContext({
       status: 'На потом',
       tag: 'тег2',
       date: '2019-08-01',
+      importance: 'Срочная неважная задача',
     },
   ],
   currentTodo: {
@@ -27,6 +29,7 @@ const Store = React.createContext({
     isEditing: false,
     tag: '',
     date: '',
+    importance: '',
   },
   isOpen: false,
 })

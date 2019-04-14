@@ -35,6 +35,7 @@ export default function TodoList() {
             <TableCell>Название</TableCell>
             <TableCell>Описание</TableCell>
             <TableCell>Дата</TableCell>
+            <TableCell>Важность</TableCell>
             <TableCell>Тег</TableCell>
             <TableCell>Действие</TableCell>
           </TableRow>
