@@ -19,7 +19,7 @@ const TodoItem = ({ todo, editTodo, deleteTodo, id }) => {
       <TableCell>{todo.date}</TableCell>
       <TableCell>{todo.tag}</TableCell>
       <TableCell>{todo.importance}</TableCell>
-      <TableCell>
+      <TableCell className="controls">
         <IconButton aria-label="Delete" onClick={() => deleteTodo(todo.id)}>
           <DeleteIcon />
         </IconButton>

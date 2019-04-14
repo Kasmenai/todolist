@@ -29,3 +29,12 @@
   justify-content: space-evenly;
   margin-top: auto;
   }
+
+.controls{
+  opacity: 0;
+  transition: opacity 0.2s linear;
+}
+
+.controls:hover{
+  opacity: 1;
+}
