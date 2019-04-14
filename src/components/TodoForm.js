@@ -19,7 +19,7 @@ export default function TodoForm() {
     state: { currentTodo },
     dispatch,
   } = useContext(Store)
-  const { name, description, status, isEditing, tag } = currentTodo
+  const { name, description, status, isEditing, tag, date } = currentTodo
 
   const handleInputChange = e => {
     const target = e.target
@@ -75,6 +75,17 @@ export default function TodoForm() {
             margin="normal"
             variant="outlined"
             multiline
+          />
+          <TextField
+            onChange={handleInputChange}
+            value={date}
+            id="date"
+            label="Дата выполнения"
+            type="date"
+            name="date"
+            InputLabelProps={{
+              shrink: true,
+            }}
           />
           <FormControl classes={{ root: 'form-control' }}>
             <InputLabel htmlFor="status">Статус</InputLabel>

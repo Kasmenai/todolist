@@ -12,6 +12,7 @@ const emptyTodo = {
   name: '',
   description: '',
   status: '',
+  date: '',
   isEditing: false,
 }
 
