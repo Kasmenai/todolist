@@ -14,10 +14,12 @@ import RadioGroup from '@material-ui/core/RadioGroup'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 
 import Autocomplete from './Autocomplete'
+import { hasChanges } from '../utilits'
+import Snack from './Snackbar'
 
 export default function TodoForm() {
   const {
-    state: { currentTodo },
+    state: { currentTodo, todos },
     dispatch,
   } = useContext(Store)
 
@@ -30,6 +32,8 @@ export default function TodoForm() {
     date,
     importance,
   } = currentTodo
+
+  const [openSnack, setOpenSnack] = React.useState(false)
 
   const handleInputChange = e => {
     const target = e.target
@@ -55,7 +59,14 @@ export default function TodoForm() {
   }
 
   const handleCancel = () => {
+    hasChanges(todos, isEditing, currentTodo)
+      ? setOpenSnack(true)
+      : dispatch({ type: 'TOGGLE_DRAWER' })
+  }
+
+  const handleSnackClose = () => {
     dispatch({ type: 'TOGGLE_DRAWER' })
+    setOpenSnack(false)
   }
 
   return (
@@ -150,6 +161,11 @@ export default function TodoForm() {
             Отменить
           </Button>
         </div>
+        <Snack
+          open={openSnack}
+          setOpen={setOpenSnack}
+          handleSnackClose={handleSnackClose}
+        />
       </form>
     </div>
   )
