@@ -3,11 +3,11 @@ import Store from '../context'
 import TodoItem from './TodoItem'
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
-import TableCell from '@material-ui/core/TableCell'
 import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 import Paper from '@material-ui/core/Paper'
 import Loader from './Loader'
+import CustomCell from './CustomCell'
 
 export default function TodoList() {
   const { state, dispatch } = useContext(Store)
@@ -30,14 +30,14 @@ export default function TodoList() {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>Id</TableCell>
-            <TableCell>Статус</TableCell>
-            <TableCell>Название</TableCell>
-            <TableCell>Описание</TableCell>
-            <TableCell>Дата</TableCell>
-            <TableCell>Важность</TableCell>
-            <TableCell>Тег</TableCell>
-            <TableCell>Действие</TableCell>
+            <CustomCell>Id</CustomCell>
+            <CustomCell>Статус</CustomCell>
+            <CustomCell>Название</CustomCell>
+            <CustomCell>Описание</CustomCell>
+            <CustomCell>Дата</CustomCell>
+            <CustomCell>Важность</CustomCell>
+            <CustomCell>Тег</CustomCell>
+            <CustomCell>Действие</CustomCell>
           </TableRow>
         </TableHead>
         <TableBody>
