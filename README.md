@@ -3,4 +3,4 @@
 * npm i
 * npm start
 
-### Watch Demo at https://kasmenai.github.io/todolist/
+### Watch Demo at https://kasm-todolist.herokuapp.com/
